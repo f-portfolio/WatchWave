@@ -9,7 +9,7 @@ urlpatterns = [
     # registration
     path('registration/', RegistrationAPIView.as_view(), name='registration'),
     
-    # erify registration
+    # verify registration
     path('confirm-registration/', ConfirmRegistrationView.as_view()), 
     
     # change password
