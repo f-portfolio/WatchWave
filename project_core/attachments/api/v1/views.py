@@ -17,8 +17,7 @@ from django.db.models.functions import Length
 class TagModelViewSet(viewsets.ModelViewSet):
     permission_classes = [IsGetOnly|IsAdminUser, OwnerAddOrSupV]
     serializer_class = TagSerializer
-    pagination_class = DefaultPagination
-    #pagination_class = CustomPageNumberPagination
+    pagination_class = CustomPageNumberPagination
     queryset = Tag.objects.all()
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     filterset_fields = ['confirm', 'user_adder']
@@ -82,8 +81,7 @@ class LanguageModelViewSet(viewsets.ModelViewSet):
 class CategoryModelViewSet(viewsets.ModelViewSet):
     permission_classes = [IsGetOnly|IsAdminUser]
     serializer_class = CategorySerializer
-    pagination_class = DefaultPagination
-    #pagination_class = CustomPageNumberPagination
+    pagination_class = CustomPageNumberPagination
     queryset = Category.objects.all()
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     # filterset_fields = ['confirm',]

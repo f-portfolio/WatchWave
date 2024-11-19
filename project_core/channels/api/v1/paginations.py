@@ -24,5 +24,5 @@ class DefaultPagination(PageNumberPagination):
 
 
 class CustomPageNumberPagination(PageNumberPagination):
-    page_size_query_param = 'page_size'  # پارامتری که کاربر وارد می‌کند
-    max_page_size = 100  # حداکثر تعداد آیتم‌های هر صفحه
+    page_size_query_param = 'page_size'  
+    max_page_size = 100  
