@@ -204,7 +204,7 @@ class VideoItemsBoxByHandSerializer(serializers.ModelSerializer ):
 
     def create(self, validated_data):
         box = validated_data.get('box')
-        if box.box_item_type and box.box_item_type.name == 'atuo':
+        if box.box_item_type and box.box_item_type == 'atuo':
             raise serializers.ValidationError("It is not possible to add items to this box because its type is auto.")
 
         request = self.context.get('request')

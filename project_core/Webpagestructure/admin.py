@@ -53,3 +53,37 @@ class SiteStructureAdmin(admin.ModelAdmin):
     readonly_fields = ('created_date', 'updated_date')
 
 
+
+
+@admin.register(BoxManagment)
+class BoxManagmentAdmin(admin.ModelAdmin):
+    list_display = ('id', 'box_name', 'name_in_view', 'box_location', 'box_priority', 'content_type', 
+                   'item_count', 'box_item_type', 'status',)
+    list_filter = ('box_location', 'box_priority', 'content_type', 'categorys', 'sub_categorys', 
+                   'sub_sub_categorys' , 'tags', 'item_count', 'box_item_type', 
+                   'status', 'supervisor_to_add', 'back_ground_color_code',)
+    search_fields = ('box_name', 'name_in_view', 'box_location', 'content_type', 'categorys', 'sub_categorys', 
+                  'sub_sub_categorys' , 'tags', 'supervisor_to_add', )
+    readonly_fields = ('created_date', 'updated_date')
+
+
+@admin.register(LocationBox)
+class LocationBoxAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', )
+    search_fields = ('name',)
+    
+
+@admin.register(ItemsBoxByHand)
+class ItemsBoxByHandAdmin(admin.ModelAdmin):
+    list_display = ('id',  'user', 'box', 'video',)
+    list_filter = ( 'user', 'box', 'video',)
+    search_fields = ( 'user', 'box', 'video',)
+    
+
+@admin.register(OfferForBoxFromOwnerChannel)
+class OfferForBoxFromOwnerChannelAdmin(admin.ModelAdmin):
+    list_display = ('id', 'proposing_user', 'video', 'box', 'is_accept', 'supervisor',)
+    list_filter = ('proposing_user', 'video', 'box', 'is_accept', 'supervisor',)
+    search_fields = ('proposing_user', 'video', 'box', 'is_accept', 'supervisor',)
+    
+    
